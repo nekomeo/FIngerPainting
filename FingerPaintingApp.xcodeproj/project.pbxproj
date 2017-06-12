@@ -13,6 +13,7 @@
 		6A2214351EEE2DFB0099C5CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2214331EEE2DFB0099C5CF /* Main.storyboard */; };
 		6A2214371EEE2DFB0099C5CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A2214361EEE2DFB0099C5CF /* Assets.xcassets */; };
 		6A22143A1EEE2DFB0099C5CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2214381EEE2DFB0099C5CF /* LaunchScreen.storyboard */; };
+		6A2214461EEE30DD0099C5CF /* DrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2214451EEE30DD0099C5CF /* DrawingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		6A2214361EEE2DFB0099C5CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A2214391EEE2DFB0099C5CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A22143B1EEE2DFB0099C5CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A2214441EEE30DD0099C5CF /* DrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingView.h; sourceTree = "<group>"; };
+		6A2214451EEE30DD0099C5CF /* DrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				6A2214301EEE2DFB0099C5CF /* ViewController.h */,
 				6A2214311EEE2DFB0099C5CF /* ViewController.m */,
 				6A2214331EEE2DFB0099C5CF /* Main.storyboard */,
+				6A2214441EEE30DD0099C5CF /* DrawingView.h */,
+				6A2214451EEE30DD0099C5CF /* DrawingView.m */,
 				6A2214361EEE2DFB0099C5CF /* Assets.xcassets */,
 				6A2214381EEE2DFB0099C5CF /* LaunchScreen.storyboard */,
 				6A22143B1EEE2DFB0099C5CF /* Info.plist */,
@@ -153,6 +158,7 @@
 				6A2214321EEE2DFB0099C5CF /* ViewController.m in Sources */,
 				6A22142F1EEE2DFB0099C5CF /* AppDelegate.m in Sources */,
 				6A22142C1EEE2DFB0099C5CF /* main.m in Sources */,
+				6A2214461EEE30DD0099C5CF /* DrawingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
