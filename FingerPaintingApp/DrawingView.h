@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Line.h"
 
 @interface DrawingView : UIView
 
-- (void)moveToPoint:(CGPoint)point;
-- (void)connectPoint:(CGPoint)point;
+@property (nonatomic, strong) UIColor *paintColor;
+@property (nonatomic) NSMutableArray *lines;
 
 @end

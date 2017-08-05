@@ -8,11 +8,12 @@
 
 #import "ViewController.h"
 #import "DrawingView.h"
-#import <UIKit/UIKit.h>
+#import "Line.h"
 
 @interface ViewController ()
-
 @property (weak, nonatomic) IBOutlet DrawingView *drawingView;
+
+
 
 @end
 
@@ -22,33 +23,67 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(paint:)];
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGesture:)];
     [self.drawingView addGestureRecognizer:panGesture];
 }
 
--(void)paint:(UIPanGestureRecognizer *)sender{
-    switch (sender.state) {
-        case UIGestureRecognizerStateBegan:{
+- (IBAction)panGesture:(UIPanGestureRecognizer *)sender
+{
+    switch (sender.state)
+    {
+        case UIGestureRecognizerStateBegan:
+        {
             CGPoint begin = [sender locationInView:self.view];
-            [self.drawingView moveToPoint:begin];
-            NSLog(@"Drawing began");
+            Line *newLine = [[Line alloc] initWithColor:self.drawingView.paintColor];
+            [newLine.points addObject:[NSValue valueWithCGPoint:begin]];
+            [self.drawingView.lines addObject:newLine];
+//            NSLog(@"Drawing began");
             break;
         }
-        case UIGestureRecognizerStateChanged:{
+        case UIGestureRecognizerStateChanged:
+        {
             CGPoint moved = [sender locationInView:self.view];
-            [self.drawingView connectPoint:moved];
-            NSLog(@"Moved: %@", NSStringFromCGPoint(moved));
+            
+            Line *lastLine = self.drawingView.lines.lastObject;
+            [lastLine.points addObject:[NSValue valueWithCGPoint:moved]];
+            [self.drawingView setNeedsDisplay];
+//            NSLog(@"Moved: %@", NSStringFromCGPoint(moved));
             break;
         }
-        case UIGestureRecognizerStateEnded:{
-            CGPoint ended = [sender locationInView:self.view];
-            [self.drawingView moveToPoint:ended];
-            NSLog(@"Drawing ended");
-            break;
-        }
+        
         default:
             break;
     }
+}
+
+- (IBAction)redButton:(UIButton *)sender
+{
+    self.drawingView.paintColor = [UIColor redColor];
+}
+
+- (IBAction)orangeButton:(UIButton *)sender
+{
+    self.drawingView.paintColor = [UIColor orangeColor];
+}
+
+- (IBAction)yellowButton:(UIButton *)sender
+{
+    self.drawingView.paintColor = [UIColor yellowColor];
+}
+
+- (IBAction)greenButton:(UIButton *)sender
+{
+    self.drawingView.paintColor = [UIColor greenColor];
+}
+
+- (IBAction)blueButton:(UIButton *)sender
+{
+    self.drawingView.paintColor = [UIColor blueColor];
+}
+
+- (IBAction)purpleButton:(UIButton *)sender
+{
+    self.drawingView.paintColor = [UIColor purpleColor];
 }
 
 @end
